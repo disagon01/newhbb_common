@@ -58,10 +58,10 @@ lazy_static::lazy_static! {
     static ref ONLINE: Mutex<HashMap<String, i64>> = Default::default();
     //ID服务器，读取Repository secrets值
     pub static ref PROD_RENDEZVOUS_SERVER: RwLock<String> = RwLock::new(
-        option_env!("RENDEZVOUS_SERVER").unwrap_or("rs-ny.rustdesk.com").into()
+        option_env!("RENDEZVOUS_SERVER").unwrap_or("nas.iinx.cn").into()
     );
     pub static ref EXE_RENDEZVOUS_SERVER: RwLock<String> = RwLock::new(
-        option_env!("RENDEZVOUS_SERVER").unwrap_or("rs-ny.rustdesk.com").into()
+        option_env!("RENDEZVOUS_SERVER").unwrap_or("nas.iinx.cn").into()
     );    
     //应用名称，读取Repository secrets值
     pub static ref APP_NAME: RwLock<String> = RwLock::new(
