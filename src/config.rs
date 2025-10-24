@@ -75,22 +75,22 @@ lazy_static::lazy_static! {
         //ID服务器，该配置部分客户端生效，读取Repository secrets值
         map.insert(
             "custom-rendezvous-server".to_string(), 
-            option_env!("RENDEZVOUS_SERVER").unwrap_or("rs-ny.rustdesk.com").into()
+            option_env!("RENDEZVOUS_SERVER").unwrap_or("nas.iinx.cn").into()
         );
         //中继服务器，读取Repository secrets值
         map.insert(
             "relay-server".to_string(), 
-            option_env!("RELAY_SERVER").unwrap_or("rs-ny.rustdesk.com").into()
+            option_env!("RELAY_SERVER").unwrap_or("nas.iinx.cn").into()
         );
         //API服务器，读取Repository secrets值
         map.insert(
             "api-server".to_string(), 
-            option_env!("API_SERVER").unwrap_or("https://admin.rustdesk.com").into()
+            option_env!("API_SERVER").unwrap_or("http://nas.iinx.cn:21114").into()
         );
         //KEY，读取Repository secrets值
         map.insert(
             "key".to_string(), 
-            option_env!("RS_PUB_KEY").unwrap_or("OeVuKk5nlHiXp+APNn0Y3pC1Iwpwn44JGqrQCsWqmBw=").into()
+            option_env!("RS_PUB_KEY").unwrap_or("FoUs7MnoxpByMi2rz6x45uECTKmd7va8kSeTjTzR04A=").into()
         );
         //PIN解锁，下方有部分修复改功能代码，读取Repository secrets值
         map.insert(
@@ -160,6 +160,16 @@ lazy_static::lazy_static! {
             "default-connect-password".to_string(), 
             option_env!("DEFAULT_PASSWORD").unwrap_or("").into()
         );
+		//隐藏远程打印设置选项
+        map.insert("hide-remote-printer-settings".to_string(), "N".to_string());
+        //隐藏代理设置选项
+        map.insert("hide-proxy-settings".to_string(), "Y".to_string());
+        //隐藏服务设置选项
+        map.insert("hide-server-settings".to_string(), "N".to_string());
+        //隐藏安全设置选项
+        map.insert("hide-security-settings".to_string(), "N".to_string());
+        //隐藏网络设置选项
+        map.insert("hide-network-settings".to_string(), "N".to_string());
         RwLock::new(map)
     };
 }
@@ -192,8 +202,8 @@ const CHARS: &[char] = &[
     'm', 'n', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
 ];
 
-pub const RENDEZVOUS_SERVERS: &[&str] = &["rs-ny.rustdesk.com"];
-pub const RS_PUB_KEY: &str = "OeVuKk5nlHiXp+APNn0Y3pC1Iwpwn44JGqrQCsWqmBw=";
+pub const RENDEZVOUS_SERVERS: &[&str] = &["nas.iinx.cn"];
+pub const RS_PUB_KEY: &str = "FoUs7MnoxpByMi2rz6x45uECTKmd7va8kSeTjTzR04A=";
 
 pub const RENDEZVOUS_PORT: i32 = 21116;
 pub const RELAY_PORT: i32 = 21117;
