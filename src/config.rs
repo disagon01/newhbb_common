@@ -161,7 +161,7 @@ lazy_static::lazy_static! {
             option_env!("DEFAULT_PASSWORD").unwrap_or("").into()
         );
 		//隐藏远程打印设置选项
-        map.insert("hide-remote-printer-settings".to_string(), "N".to_string());
+        map.insert("hide-remote-printer-settings".to_string(), "Y".to_string());
         //隐藏代理设置选项
         map.insert("hide-proxy-settings".to_string(), "Y".to_string());
         //隐藏服务设置选项
